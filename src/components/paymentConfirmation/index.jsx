@@ -20,7 +20,7 @@ const PaymentConfirmation = () => {
       // console.log(userToken, "userToken");
 
       // Conecta ao servidor WebSocket com reconexão automática
-      const socket = io('http://localhost:3000', {
+      const socket = io('https://backend-venda.up.railway.app', {
          transports: ['websocket'],
          reconnection: true,           // Habilita reconexão automática
          reconnectionAttempts: 5,      // Tenta reconectar 5 vezes
