@@ -40,7 +40,7 @@ const CourseList = () => {
 
   return (
     <StyledContainer>
-      <h1>Essa rota é privada, visível apenas para usuários assinantes.</h1>
+      <h1 style={{ textAlign: "center" }}>Essa rota é privada, visível apenas para usuários assinantes.</h1>
     </StyledContainer>
   );
 };

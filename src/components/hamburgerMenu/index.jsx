@@ -21,7 +21,7 @@ const HamburgerMenu = () => {
           hasPaid ? (
             <Link onClick={closeMenu} to="/cursos-lista">Curso</Link>
           ) : (
-            <Link onClick={closeMenu} to="/pagamento">Assinatura</Link>
+            <Link onClick={closeMenu} to="/gerar-pix">Assinatura</Link>
           )
         }
         {!isAuthenticated && (
