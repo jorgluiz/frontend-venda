@@ -5,8 +5,10 @@ import { useNavigate } from "react-router-dom";
 import PixIcon from '../iCons/pixIcon';
 import LuckSecurity from "../iCons/luckSecurity";
 
-import { formatPhoneNumber, validatePhone } from "../../utils/formatPhone";
+import { isValidName } from "../../utils/formatName";
+import { isValidEmail } from "../../utils/formatEmail";
 import { validateCPF } from "../../utils/validateCPF";
+import { formatPhoneNumber, validatePhone } from "../../utils/formatPhone";
 import Pagarme from "../iCons/pagarme";
 import { createPixTransaction } from "../../services/api";
 
@@ -39,9 +41,19 @@ const PaymentForm = () => {
     event.preventDefault();
 
     // Previne submit se não houver campos preenchidos
-    if (!name || !email || !document || !phone) {
+    // if (!name || !email || !document || !phone) {
+    //   return;
+    // }
+
+    if (!isValidName(name)) {
+      alert('Nome inválido. Certifique-se de que o nome está correto.');
       return;
-    }
+    };
+
+    if (!isValidEmail(email)) {
+      alert('E-mail inválido. Certifique-se de que o e-mail está correto.');
+      return;
+    };
 
     if (!validateCPF(document)) {
       alert('CPF inválido. Certifique-se de que o CPF está correto.');
@@ -49,9 +61,10 @@ const PaymentForm = () => {
     };
 
     if (!validatePhone(phone)) {
-      alert('Número de telefone inválido. O formato correto é (DDD) 9XXXX-XXXX.');
+      alert('Número de telefone inválido. O formato correto é (DDD) 9 XXXX-XXXX.');
       return;
     };
+
 
     try {
       const response = await createPixTransaction({ name, email, document, phone });
@@ -99,7 +112,6 @@ const PaymentForm = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Nome"
-                required
               />
               <label>E-mail *</label>
               <Input
@@ -107,7 +119,6 @@ const PaymentForm = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-                required
               />
               <label>CPF *</label>
               <Input
@@ -115,7 +126,6 @@ const PaymentForm = () => {
                 value={document}
                 onChange={(e) => setDocument(e.target.value)}
                 placeholder="CPF"
-                required
               />
               <label>TELEFONE *</label>
               <Input
@@ -123,7 +133,6 @@ const PaymentForm = () => {
                 value={phone}
                 onChange={(e) => handlePhoneChange(e.target.value)}
                 placeholder="Telefone"
-                required
               />
               <ButtonContainer>
                 <PrimaryButton type="submit">Completar compra</PrimaryButton >
