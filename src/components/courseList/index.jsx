@@ -4,45 +4,45 @@ import { StyledContainer } from "./styles";
 // import { getPaymentStatusFromDatabaseCheckPayment } from "../../services/api";
 
 const CourseList = () => {
-   const [loading, setLoading] = useState(true); // Estado para controlar o carregamento
-   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true); // Estado para controlar o carregamento
+  const navigate = useNavigate();
 
-   // useEffect(() => {
-   //    const userToken = localStorage.getItem("token");
+  // useEffect(() => {
+  //    const userToken = localStorage.getItem("token");
 
-   //    const userIsPaidValidate = async () => {
-   //       if (!userToken) {
-   //          // Redireciona para a página de login se não houver token
-   //          navigate("/conecte-se");
-   //          return;
-   //       }
+  //    const userIsPaidValidate = async () => {
+  //       if (!userToken) {
+  //          // Redireciona para a página de login se não houver token
+  //          navigate("/conecte-se");
+  //          return;
+  //       }
 
-   //       try {
-   //          const result = await getPaymentStatusFromDatabase(userToken);
+  //       try {
+  //          const result = await getPaymentStatusFromDatabase(userToken);
 
-   //          // Verifica se o pagamento foi realizado
-   //          if (!result.paid || result.paid === "noPaid" || result.paid === null) {
-   //             navigate("/pagamento");
-   //          }
-   //       } catch (error) {
-   //          console.error("Erro ao verificar o status de pagamento:", error);
-   //          navigate("/pagamento");
-   //       } finally {
-   //          setLoading(false); // Após a verificação, para o estado de carregamento
-   //       }
-   //    };
+  //          // Verifica se o pagamento foi realizado
+  //          if (!result.paid || result.paid === "noPaid" || result.paid === null) {
+  //             navigate("/pagamento");
+  //          }
+  //       } catch (error) {
+  //          console.error("Erro ao verificar o status de pagamento:", error);
+  //          navigate("/pagamento");
+  //       } finally {
+  //          setLoading(false); // Após a verificação, para o estado de carregamento
+  //       }
+  //    };
 
-   //    userIsPaidValidate();
-   // }, [navigate]);
+  //    userIsPaidValidate();
+  // }, [navigate]);
 
-   // Exibe um indicador de carregamento enquanto o status de pagamento está sendo verificado
-   if (loading) return null; // Aguarda o carregamento
+  // Exibe um indicador de carregamento enquanto o status de pagamento está sendo verificado
+  // if (loading) return null; // Aguarda o carregamento
 
-   return (
-      <StyledContainer>
-         <h1>Essa rota é privada, visível apenas para usuários assinantes.</h1>
-      </StyledContainer>
-   );
+  return (
+    <StyledContainer>
+      <h1>Essa rota é privada, visível apenas para usuários assinantes.</h1>
+    </StyledContainer>
+  );
 };
 
 export default CourseList;

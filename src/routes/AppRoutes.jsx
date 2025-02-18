@@ -5,7 +5,7 @@ import Login from "../pages/pageLoginForm";
 import Signup from "../pages/pageSignUpForm";
 import PaymentService from "../pages/pagePaymentForm";
 import PageCourseList from "../pages/pageCourseList";
-import Navbar from "../components/hamburgerMenu";
+// import Navbar from "../components/hamburgerMenu";
 import PaymentConfirmation from "../pages/pagePaymentConfirmation";
 
 import Home from "../pages/pageHome";
@@ -13,25 +13,25 @@ import Home from "../pages/pageHome";
 import { PrivateRouteCourseList, PrivateRoutePaymentForm, AuthRedirectRouteSignIn, AuthRedirectRouteSignUp, PrivateRoutePaymentConfirmation } from "./AuthRedirectRoute";
 
 const AppRoutes = () => {
-   return (
-      <Routes>
-         {/* Página acessível por qualquer usuário */}
-         <Route path="/" element={<GridLayout> <Home /> </GridLayout>} />
+  return (
+    <Routes>
+      {/* Página acessível por qualquer usuário */}
+      <Route path="/" element={<GridLayout> <Home /> </GridLayout>} />
 
-         {/* Página 404 e outras páginas públicas */}
-         <Route path="nav" element={<Navbar />} />
-         <Route path="confirmacao-pagamento" element={<PrivateRoutePaymentConfirmation element={<PaymentConfirmation />} />} />
-         <Route path="*" element={<NotFoundPage />} />
+      {/* Página 404 e outras páginas públicas */}
+      {/* <Route path="nav" element={<Navbar />} /> */}
+      <Route path="confirmacao-pix-gerado" element={<PrivateRoutePaymentConfirmation element={<PaymentConfirmation />} />} />
+      <Route path="*" element={<NotFoundPage />} />
 
-         {/* Bloquear login e cadastro para usuários autenticados */}
-         <Route path="conecte-se" element={<AuthRedirectRouteSignIn element={<Login />} />} />
-         <Route path="users/sign_up" element={<AuthRedirectRouteSignUp element={<Signup />} />} />
+      {/* Bloquear login e cadastro para usuários autenticados */}
+      <Route path="conecte-se" element={<AuthRedirectRouteSignIn element={<Login />} />} />
+      <Route path="users/sign_up" element={<AuthRedirectRouteSignUp element={<Signup />} />} />
 
-         {/* Rotas privadas (só para usuários autenticados) */}
-         <Route path="pagamento" element={<PrivateRoutePaymentForm element={<PaymentService />} />} />
-         <Route path="cursos-lista" element={<PrivateRouteCourseList element={<PageCourseList />} />} />
-      </Routes>
-   );
+      {/* Rotas privadas (só para usuários autenticados) */}
+      <Route path="gerar-pix" element={<PrivateRoutePaymentForm element={<PaymentService />} />} />
+      <Route path="cursos-lista" element={<PrivateRouteCourseList element={<PageCourseList />} />} />
+    </Routes>
+  );
 };
 
 export default AppRoutes;

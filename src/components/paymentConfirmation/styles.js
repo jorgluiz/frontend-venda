@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-width: 70%;
+width: 100%;
+max-width: 900px;
 display: flex;
-align-items: center;
 flex-direction: column;
+align-items: center;
 border: 3px solid red;
 
 `;
@@ -56,7 +57,9 @@ height: 40px;
 export const Container = styled.div`
 width: 100%;
 display: flex;
+align-items: center;
 justify-content: space-evenly;
+/* justify-content: space-evenly; */
 
 
 & img {

@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-width: 50%;
+width: 100%;
+max-width: 400px;
 display: flex;
 flex-direction: column;
 
-@media (max-width: 768px) {
-    width: 100%;
-}
 `;
 
 export const ContainerValidity = styled.div`

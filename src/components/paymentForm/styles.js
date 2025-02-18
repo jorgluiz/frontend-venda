@@ -2,23 +2,33 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-width: 90%;
+width: 100%;
+max-width: 900px;
 height: 700px;
 display: flex;
 align-items: center;
 justify-content: space-around;
 border: 3px solid red;
 
-@media (min-width: 700px) {
+/* @media (min-width: 700px) {
    width: 1152px;
-}
+} */
 
-@media (max-width: 760px) {
+@media (max-width: 850px) {
   /* flex-wrap: wrap; */
   display: flex;
   flex-direction: column;
   height: auto;
 }
+`;
+
+export const PaymentContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+max-width: 400px;
+border-top: 1px solid #000;
 `;
 
 export const ContainerForm = styled.div`
@@ -78,8 +88,9 @@ text-align: center;
 `;
 
 export const PricingSection = styled.div`
-width: 30%;
-height: 425px;
+width: 100%;
+max-width: 400px;
+height: 521px;
 border: 1px solid #000;
 
 @media (max-width: 760px) {
@@ -98,6 +109,8 @@ border-bottom: 1px solid  rgb(54, 57, 77, 20%);
 `;
 
 export const PaymentAccessSection = styled.div`
+/* width: 100%;
+max-width: 400px; */
 margin-bottom: 20px;
 /* width: 381px; */
 /* border: 1px solid #000; */

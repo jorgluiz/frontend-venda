@@ -6,7 +6,7 @@ display: grid;
 grid-template:            
 "header  header header" 100px /* rows */
 "content content content" 1fr /* rows */ 
-"footer  footer  footer" 100px / 100px 1fr 100px; /* rows */
+"footer  footer  footer" 60px / 60px 1fr 60px; /* rows */
 /*columns columns columns */
 height: 100vh;
 
