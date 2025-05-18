@@ -38,7 +38,7 @@ const PaymentConfirmation = () => {
     const socket = io('https://backend-venda.up.railway.app', {
       transports: ['websocket'],
       reconnection: true,           // Habilita reconexão automática
-      reconnectionAttempts: 5,      // Tenta reconectar 5 vezes
+      reconnectionAttempts: 10,      // Tenta reconectar 10 vezes
       reconnectionDelay: 1000,      // Delay entre as tentativas de reconexão (1 segundo)
       // auth: { token: userToken }, // Envia o token como autenticação, obter no backend io.on('connection', (socket) => 
     });
